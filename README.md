@@ -1,124 +1,148 @@
 # 🎲 Game Master TTRPG Companion
-**An AI-Powered Assistant for Tabletop Role-Playing Game Masters**
+An AI‑assisted web app to help Game Masters run TTRPG sessions with less overhead and better continuity.
+
+Status: In active MVP development
 
 ---
 
 ## 📖 Overview
-The **Game Master Companion Tool** is a web-based application designed to help Game Masters (GMs) manage tabletop role-playing game (TTRPG) sessions with ease.  
-It provides **AI-assisted transcription and summarization**, **NPC generation and management**, and **world-building organization** to reduce administrative workload and improve continuity between sessions.  
+The Game Master Companion Tool is a web-based application that helps Game Masters (GMs) manage tabletop role-playing game (TTRPG) sessions with ease.  
+It provides AI-assisted transcription and summarization, NPC generation and management, and world organization to reduce admin work and improve continuity between sessions.
 
-This project demonstrates full-stack software engineering, AI integration, and cloud deployment, built as a portfolio capstone project.
+This project demonstrates full‑stack software engineering, AI integration, and cloud deployment as a portfolio capstone.
 
 ---
 
 ## ✨ Features
-- **AI Transcription & Summarization**  
-  Live audio transcription of sessions with AI-generated highlights and summaries.
-
-- **NPC Generation & Management**  
-  Create, track, and reuse NPCs across campaigns with AI-assisted attributes.
-
-- **World Organization & Tracking**  
-  Store lore, maps, and notes in a structured format for fast retrieval and AI-enhanced support.
+- AI Transcription & Summarization
+  - Upload recorded session audio (live streaming planned) and generate highlights and summaries.
+- NPC Generation & Management
+  - Create, track, and reuse NPCs across campaigns with optional AI-assisted attributes.
+- World Organization & Tracking
+  - Store lore, maps, and notes in a structured format for fast retrieval.
 
 ---
 
 ## 🛠️ Tech Stack
-- **Frontend:** React (TypeScript), TailwindCSS  
-- **Backend:** Java + Spring Boot  
-- **Database:** PostgreSQL  
-- **AI Services:** OpenAI API (Whisper, GPT models)  
-- **Deployment:** Docker + AWS/Render/Fly.io  
-- **Version Control:** GitHub (feature-branch workflow)  
+- Frontend: React 18 + TypeScript + Vite, React Router, Tailwind CSS
+- Backend: Java 21 + Spring Boot 3 (Web, Data JPA), springdoc‑openapi (Swagger UI)
+- Database: PostgreSQL 16, Flyway for migrations
+- AI Services: OpenAI API (Whisper for batch transcription, GPT models)
+- DevOps: Docker Compose (local Postgres), GitHub Actions CI (build + test)
+- Hosting: Render or Fly.io (API), Netlify or Vercel (web)
+
+Why this: Stable, industry‑standard tools that demonstrate end‑to‑end competency without unnecessary complexity.
 
 ---
 
-## 🚀 Getting Started
+<!-- ## 🚀 Getting Started
 
 ### Prerequisites
-- [Java 17+](https://adoptium.net/)  
-- [Node.js & npm](https://nodejs.org/)  
-- [PostgreSQL](https://www.postgresql.org/)  
-- [Docker](https://www.docker.com/) (optional, for containerized setup)  
+- Java 21+
+- Node.js 20+ and npm
+- Docker (recommended for local Postgres)
+- OpenAI API key
 
-### Installation
-1. Clone the repository:
-   ```bash
-    git clone https://github.com/YOUR_USERNAME/Game-Master-TTRPG-Companion.git
-    cd Game-Master-TTRPG-Companion
-    ```
+### Clone
+```bash
+git clone https://github.com/StrikorDawn/Game-Master-TTRPG-Companion.git
+cd Game-Master-TTRPG-Companion
+```
 
-2. Set up the backend:
-   ```bash
-    cd backend
-    ./mvnw spring-boot:run
-    ```
+### Configuration
+Backend (environment variables or application.properties):
+```properties
+SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/gm_companion
+SPRING_DATASOURCE_USERNAME=postgres
+SPRING_DATASOURCE_PASSWORD=postgres
+OPENAI_API_KEY=sk-...
+```
 
-3. Set up the frontend:
-   ```bash
-    cd frontend
-    npm install
-    npm start
-    ```
+Frontend (.env):
+```env
+VITE_API_BASE_URL=http://localhost:8080/api
+```
 
-4. Access the app at: http://localhost:3000
+### Run the backend
+```bash
+cd backend
+./mvnw spring-boot:run
+# Swagger UI (if enabled): http://localhost:8080/swagger-ui.html
+```
+
+### Run the frontend
+```bash
+cd frontend
+npm install
+npm run dev
+# App: http://localhost:5173
+```
+
 ---
 
 ## 🧪 Running Tests
 ```bash
-# Backend (JUnit tests)
+# Backend (JUnit)
 cd backend
 ./mvnw test
 
-# Frontend (Jest tests)
+# Frontend (Vitest + React Testing Library)
 cd frontend
 npm test
 ```
----
-## 📂 Project Structure
 
+--- -->
+
+## 📂 Project Structure
 ```
-gm-companion-tool/
-├── backend/         # Spring Boot backend
-├── frontend/        # React frontend
-├── docs/            # SRS, design docs, diagrams
-├── docker/          # Dockerfiles / docker-compose
-├── .github/         # CI/CD workflows
-├── README.md        # This file
+Game-Master-TTRPG-Companion/
+├── backend/          # Spring Boot API
+├── frontend/         # React + Vite web app
+├── docs/             # Design docs & diagrams
+├── .github/          # CI/CD workflows
+├── README.md
 └── LICENSE
 ```
+
 ---
+
 ## 📌 Roadmap
 ### Phase 1 — Backend Foundations
-- [ ] Set up Spring Boot backend project structure  
-- [ ] Implement PostgreSQL database integration  
-- [ ] Define REST API endpoints and basic CRUD functionality  
-- [ ] Add backend unit & integration tests  
+- [ ] Spring Boot project structure
+- [ ] PostgreSQL integration + Flyway migrations
+- [ ] REST API endpoints and basic CRUD
+- [ ] Backend unit & integration tests
 
-### Phase 2 — AI Transcription Prototype
-- [ ] Integrate audio input handling  
-- [ ] Connect to AI transcription service (e.g., OpenAI Whisper)  
-- [ ] Display live transcription output from backend  
-- [ ] Add AI-generated session summaries  
+### Phase 2 — Transcription Prototype (Batch)
+- [ ] Audio upload handling
+- [ ] Transcription service integration (e.g., Whisper)
+- [ ] Persist transcript and expose via API
+- [ ] AI-generated session summaries
 
 ### Phase 3 — Frontend UI/UX
-- [ ] Set up React frontend project structure  
-- [ ] Create clean, responsive UI for transcription tool  
-- [ ] Implement API calls to backend  
-- [ ] Polish user experience for a minimum viable product (MVP)  
+- [ ] React app structure and routing
+- [ ] Clean, responsive UI for sessions/NPCs
+- [ ] API integration with loading/error states
+- [ ] MVP polish
 
 ### Phase 4 — Extended Features
-- [ ] NPC Generation & Management (CRUD + AI assistance)  
-- [ ] World & Campaign Organization (maps, notes, lore tracking)  
-- [ ] Advanced search & AI-context integration  
+- [ ] NPC Generation & Management (CRUD + AI assistance)
+- [ ] World & Campaign Organization (maps, notes, lore tracking)
+- [ ] Advanced search and AI-context integration
 
 ### Phase 5 — Deployment & Showcase
-- [ ] Dockerize backend and frontend  
-- [ ] Deploy to cloud hosting (AWS/Render/Fly.io)  
-- [ ] Finalize documentation & create demo video 
+- [ ] Dockerize services
+- [ ] Deploy to cloud hosting (AWS/Render/Fly.io)
+- [ ] Finalize documentation and create demo video
 
-See the [ClickUp Board](https://app.clickup.com/9013562934/v/f/901312048157/90132321355) for detailed progress and Status 
+See the ClickUp Board for detailed progress and status:
+https://app.clickup.com/9013562934/v/f/901312048157/90132321355
+
+---
+
+## 🤝 Contributing
+This is a personal portfolio project. Feedback is welcome via issues, but external PRs may not be accepted.
 
 ## 👤 Author
 Taden Marston
-- [LinkedIn](https://www.linkedin.com/in/tadenmarston/)
+- LinkedIn: https://www.linkedin.com/in/tadenmarston/
